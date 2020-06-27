@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Fill Me In</string>
+    <string name="enable">Enable</string>
+    <string name="toggle_vibration">Toggle Vibration</string>
+    <string name="scan_for_bt_device">Scan for Bluetooth vibration device</string>
+    <string name="ble_not_supported">Bluetooth Low Energy is not supported on this device. Therefore, this app is pretty useless. Sorry, I guess :/</string>
+    <string name="error_bluetooth_not_supported">Bluetooth is not supported on your device. Buy a new phone!</string>
+    <string name="unknown_device">unknown device</string>
+    <string name="menu_refresh">refresh</string>
+    <string name="menu_scan">scan</string>
+    <string name="menu_stop">stop</string>
+    <string name="title_activity_device_control">DeviceControlActivity</string>
+    <!--
+    This string is used for square devices and overridden by hello_world in
+    values-round/strings.xml for round devices.
+    -->
+    <string name="hello_world">Hello Square World!</string>
+    <string name="connected">connected</string>
+    <string name="disconnected">disconnected</string>
+    <string name="no_data">no data</string>
+    <string name="label_data">Data: </string>
+    <string name="label_state">"State: "</string>
+    <string name="label_device_address">"Device Address: "</string>
+    <string name="unknown_service">unknown service</string>
+    <string name="unknown_characteristic">unknown characteristic</string>
+    <string name="menu_connect">Connect</string>
+    <string name="menu_disconnect">Disconnect</string>
+    <string name="title_devices">"Devices: "</string>
+</resources>
