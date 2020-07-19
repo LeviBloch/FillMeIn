@@ -1,0 +1,106 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.android.fillmeinfixed"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="18"
+8-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="28" />
+9-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml
+10
+11    <!-- Min/target SDK versions (<uses-sdk>) managed by build.gradle -->
+12    <!--
+13 Declare this required feature if you want to make the app available to BLE-capable
+14    devices only.  If you want to make your app available to devices that don't support BLE,
+15    you should omit this in the manifest.  Instead, determine BLE capability by using
+16    PackageManager.hasSystemFeature(FEATURE_BLUETOOTH_LE)
+17    -->
+18    <uses-feature
+18-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:14:5-16:35
+19        android:name="android.hardware.bluetooth_le"
+19-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:15:9-53
+20        android:required="true" />
+20-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:16:9-32
+21
+22    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+22-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:18:5-70
+22-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:18:22-67
+23    <uses-permission android:name="android.permission.READ_SMS" />
+23-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:19:5-67
+23-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:19:22-64
+24    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+24-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:20:5-79
+24-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:20:22-76
+25    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+25-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:21:5-81
+25-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:21:22-78
+26    <uses-permission android:name="android.permission.BLUETOOTH" />
+26-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:22:5-68
+26-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:22:22-65
+27    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+27-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:23:5-74
+27-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:23:22-71
+28
+29    <application
+29-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:25:5-55:19
+30        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+30-->[androidx.core:core:1.1.0] C:\Users\Levi\.gradle\caches\transforms-2\files-2.1\76f2b6439d16df60df3177021482ee5a\core-1.1.0\AndroidManifest.xml:24:18-86
+31        android:debuggable="true"
+32        android:icon="@drawable/ic_launcher"
+32-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:26:9-45
+33        android:label="@string/app_name"
+33-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:27:9-41
+34        android:testOnly="true"
+35        android:theme="@style/Theme.AppCompat.Light" >
+35-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:28:9-53
+36        <receiver
+36-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:29:9-32:39
+37            android:name="com.example.android.fillmeinfixed.SMSBroadcastReceiver"
+37-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:30:13-49
+38            android:enabled="true"
+38-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:31:13-35
+39            android:exported="true" />
+39-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:32:13-36
+40
+41        <activity
+41-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:34:9-45:20
+42            android:name="com.example.android.fillmeinfixed.DeviceScanActivity"
+42-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:37:13-47
+43            android:label="@string/app_name"
+43-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:38:13-45
+44            android:theme="@style/FullscreenActionBarStyle" >
+44-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:36:13-60
+45            <intent-filter>
+45-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:40:13-44:29
+46                <action android:name="android.intent.action.MAIN" />
+46-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:41:17-69
+46-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:41:25-66
+47
+48                <category android:name="android.intent.category.LAUNCHER" />
+48-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:43:17-77
+48-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:43:27-74
+49            </intent-filter>
+50        </activity>
+51        <activity android:name="com.example.android.fillmeinfixed.DeviceControlActivity" />
+51-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:46:9-59
+51-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:46:19-56
+52
+53        <service
+53-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:48:9-50:38
+54            android:name="com.example.android.fillmeinfixed.BluetoothLeService"
+54-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:49:13-47
+55            android:enabled="true" />
+55-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:50:13-35
+56        <service
+56-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:51:9-54:72
+57            android:name="com.example.android.fillmeinfixed.MessageDeliveryJobIntentService"
+57-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:52:13-60
+58            android:enabled="true"
+58-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:53:13-35
+59            android:permission="android.permission.BIND_JOB_SERVICE" />
+59-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:54:13-69
+60    </application>
+61
+62</manifest>
