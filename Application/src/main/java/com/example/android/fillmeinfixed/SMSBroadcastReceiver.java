@@ -12,6 +12,7 @@ public class SMSBroadcastReceiver extends BroadcastReceiver {
 
     private SMSReceivedCallback listener;
 
+    // apparently you shouldn't have any parameters in the constructor, but it works *shrug*
     public SMSBroadcastReceiver(SMSReceivedCallback listener) {
         this.listener = listener;
     }

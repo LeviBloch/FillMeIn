@@ -3,7 +3,6 @@
     package="com.example.android.fillmeinfixed"
     android:versionCode="1"
     android:versionName="1.0">
-
     <!-- Min/target SDK versions (<uses-sdk>) managed by build.gradle -->
     <!--
  Declare this required feature if you want to make the app available to BLE-capable
@@ -26,17 +25,19 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/Theme.AppCompat.Light">
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/title_activity_settings"></activity>
+
         <receiver
             android:name=".SMSBroadcastReceiver"
             android:enabled="true"
             android:exported="true" />
 
         <activity
-
-            android:theme="@style/FullscreenActionBarStyle"
             android:name=".DeviceScanActivity"
-            android:label="@string/app_name">
-
+            android:label="@string/app_name"
+            android:theme="@style/FullscreenActionBarStyle">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
