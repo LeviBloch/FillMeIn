@@ -21,7 +21,7 @@
       "properties": {
         "packageId": "com.example.android.fillmeinfixed",
         "split": "",
-        "minSdkVersion": "18"
+        "minSdkVersion": "26"
       }
     }
   ]

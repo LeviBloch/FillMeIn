@@ -11,7 +11,7 @@ languages:    [Java]
 solutions:    [Mobile]
 github:       android/connectivity
 level:        ADVANCED
-icon:         screenshots/icon-web.png
+icon:         screenshots/ic_launcher-web.png
 apiRefs:
     - android:android.app.Service
     - android:android.bluetooth.BluetoothGattService

@@ -5,7 +5,7 @@
 5    android:versionName="1.0" >
 6
 7    <uses-sdk
-8        android:minSdkVersion="18"
+8        android:minSdkVersion="26"
 8-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml
 9        android:targetSdkVersion="28" />
 9-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml
@@ -43,70 +43,82 @@
 26-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:22:22-71
 27
 28    <application
-28-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:24:5-56:19
+28-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:24:5-63:19
 29        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-29-->[androidx.core:core:1.1.0] C:\Users\Levi\.gradle\caches\transforms-2\files-2.1\76f2b6439d16df60df3177021482ee5a\core-1.1.0\AndroidManifest.xml:24:18-86
+29-->[androidx.core:core:1.5.0] C:\Users\Levi\.gradle\caches\transforms-2\files-2.1\943e90bed42cf8619a60d41b617cc8c9\core-1.5.0\AndroidManifest.xml:24:18-86
 30        android:debuggable="true"
-31        android:icon="@drawable/ic_launcher"
-31-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:25:9-45
-32        android:label="@string/app_name"
-32-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:26:9-41
-33        android:testOnly="true"
-34        android:theme="@style/Theme.AppCompat.Light" >
-34-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:27:9-53
-35        <activity
-35-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:28:9-30:72
-36            android:name="com.example.android.fillmeinfixed.SettingsActivity"
-36-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:29:13-45
-37            android:label="@string/title_activity_settings" />
-37-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:30:13-60
-38
-39        <receiver
-39-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:32:9-35:39
-40            android:name="com.example.android.fillmeinfixed.SMSBroadcastReceiver"
-40-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:33:13-49
-41            android:enabled="true"
-41-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:34:13-35
-42            android:exported="true" />
-42-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:35:13-36
-43
-44        <activity
-44-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:37:9-46:20
-45            android:name="com.example.android.fillmeinfixed.DeviceScanActivity"
-45-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:38:13-47
-46            android:label="@string/app_name"
-46-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:39:13-45
-47            android:theme="@style/FullscreenActionBarStyle" >
-47-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:40:13-60
-48            <intent-filter>
-48-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:41:13-45:29
-49                <action android:name="android.intent.action.MAIN" />
-49-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:42:17-69
-49-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:42:25-66
-50
-51                <category android:name="android.intent.category.LAUNCHER" />
-51-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:44:17-77
-51-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:44:27-74
-52            </intent-filter>
-53        </activity>
-54        <activity android:name="com.example.android.fillmeinfixed.DeviceControlActivity" />
-54-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:47:9-59
-54-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:47:19-56
-55
-56        <service
-56-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:49:9-51:38
-57            android:name="com.example.android.fillmeinfixed.BluetoothLeService"
-57-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:50:13-47
-58            android:enabled="true" />
-58-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:51:13-35
+31        android:extractNativeLibs="false"
+32        android:icon="@drawable/ic_launcher"
+32-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:25:9-45
+33        android:label="@string/app_name"
+33-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:26:9-41
+34        android:testOnly="true"
+35        android:theme="@style/AppTheme" >
+35-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:27:9-40
+36        <activity android:name="com.example.android.fillmeinfixed.WelcomeActivity" >
+36-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:29:9-34:20
+36-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:29:19-50
+37            <intent-filter>
+37-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:30:13-33:29
+38                <action android:name="android.intent.action.MAIN" />
+38-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:31:17-69
+38-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:31:25-66
+39
+40                <category android:name="android.intent.category.LAUNCHER" />
+40-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:32:17-77
+40-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:32:27-74
+41            </intent-filter>
+42        </activity>
+43        <activity
+43-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:35:9-37:63
+44            android:name="com.example.android.fillmeinfixed.SettingsActivity"
+44-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:36:13-45
+45            android:label="@string/title_activity_settings" />
+45-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:37:13-60
+46
+47        <receiver
+47-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:39:9-42:39
+48            android:name="com.example.android.fillmeinfixed.SMSBroadcastReceiver"
+48-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:40:13-49
+49            android:enabled="true"
+49-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:41:13-35
+50            android:exported="true" />
+50-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:42:13-36
+51
+52        <activity
+52-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:44:9-49:20
+53            android:name="com.example.android.fillmeinfixed.DeviceScanActivity"
+53-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:45:13-47
+54            android:label="@string/app_name"
+54-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:46:13-45
+55            android:theme="@style/FullscreenActionBarStyle" >
+55-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:47:13-60
+56        </activity>
+57        <activity android:name="com.example.android.fillmeinfixed.DeviceControlActivity" />
+57-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:50:9-59
+57-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:50:19-56
+58
 59        <service
-59-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:52:9-55:72
-60            android:name="com.example.android.fillmeinfixed.MessageDeliveryJobIntentService"
-60-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:53:13-60
-61            android:enabled="true"
+59-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:52:9-54:38
+60            android:name="com.example.android.fillmeinfixed.BluetoothLeService"
+60-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:53:13-47
+61            android:enabled="true" />
 61-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:54:13-35
-62            android:permission="android.permission.BIND_JOB_SERVICE" />
-62-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:55:13-69
-63    </application>
-64
-65</manifest>
+62        <service
+62-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:55:9-58:72
+63            android:name="com.example.android.fillmeinfixed.MessageDeliveryJobIntentService"
+63-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:56:13-60
+64            android:enabled="true"
+64-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:57:13-35
+65            android:permission="android.permission.BIND_JOB_SERVICE" />
+65-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:58:13-69
+66
+67        <meta-data
+67-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:60:9-62:57
+68            android:name="preloaded_fonts"
+68-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:61:13-43
+69            android:resource="@array/preloaded_fonts" />
+69-->C:\Users\Levi\Documents\GitHub\FillMeIn\Application\src\main\AndroidManifest.xml:62:13-54
+70    </application>
+71
+72</manifest>

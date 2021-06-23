@@ -17,6 +17,7 @@
 package com.example.android.fillmeinfixed;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.bluetooth.BluetoothGattCharacteristic;
 import android.bluetooth.BluetoothGattService;
 import android.content.BroadcastReceiver;
@@ -26,18 +27,23 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.ServiceConnection;
 import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.os.Looper;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.CompoundButton;
 import android.widget.SeekBar;
 import android.widget.Switch;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -59,11 +65,19 @@ public class DeviceControlActivity extends AppCompatActivity implements SMSRecei
     public static final String EXTRAS_DEVICE_ADDRESS = "DEVICE_ADDRESS";
 
 
+    private Switch switchIncludeSenderNum;
+    boolean includeSenderNum;
+
     private SeekBar vibrationIntensitySeekBar;
     byte vibrationIntensityOn = 0x64;
 
-    private Switch switchIncludeSenderNum;
-    boolean includeSenderNum;
+    private SeekBar morseTimeUnitSeekBar;
+    private TextView morseTimeUnitTextView;
+
+    // length of time, in milliseconds, of one dot in morse code
+    // wikipedia uses the example of 50ms
+    // does not seem to work on anything much lower than 100ms.
+    private int morseTimeUnit = 200;
 
 
     private String mDeviceName;
@@ -137,9 +151,14 @@ public class DeviceControlActivity extends AppCompatActivity implements SMSRecei
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_device_control);
 
+        // set bars at top and bottom to transparent
+        Window w = getWindow();
+        w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+
         // init views
-        initVibrationIntensitySeekBar();
         initSwitchIncludeSenderNum();
+        initVibrationIntensitySeekBar();
+        initMorseTimeUnitSeekBar();
 
 
         final Intent intent = getIntent();
@@ -147,8 +166,8 @@ public class DeviceControlActivity extends AppCompatActivity implements SMSRecei
         mDeviceAddress = intent.getStringExtra(EXTRAS_DEVICE_ADDRESS);
 
 
-        getSupportActionBar().setTitle(mDeviceName);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//        getSupportActionBar().setTitle(mDeviceName);
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         Intent gattServiceIntent = new Intent(this, BluetoothLeService.class);
         bindService(gattServiceIntent, mServiceConnection, BIND_AUTO_CREATE);
 
@@ -161,6 +180,44 @@ public class DeviceControlActivity extends AppCompatActivity implements SMSRecei
         IntentFilter filter = new IntentFilter("android.provider.Telephony.SMS_RECEIVED");
         registerReceiver(mSMSBroadcastReceiver, filter);
 
+    }
+
+    private void initMorseTimeUnitSeekBar() {
+        morseTimeUnitSeekBar = findViewById(R.id.morseTimeUnitSeekBar);
+        morseTimeUnitTextView = findViewById(R.id.morseTimeUnitTextView);
+
+        // physical values in milliseconds
+        final int min = 100;
+        final int max = 600;
+        final int initialProgress = 200;
+        // difference between selectable values
+        // i.e. if resolution were 50, then the values might go 100, 150, 200, 250, etc.
+        final int resolution = 50;
+
+        // the tick marks don't work properly when using setMin
+        // Maybe there's a fix, but this works just as well
+        morseTimeUnitSeekBar.setMax((max-min)/resolution);
+
+        morseTimeUnitSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                morseTimeUnit = progress*resolution + min;
+                morseTimeUnitTextView.setText(getResources().getString(R.string.morseTimeUnit, morseTimeUnit));
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+
+        
+        morseTimeUnitSeekBar.setProgress((initialProgress-min)/resolution);
     }
 
     private void initSwitchIncludeSenderNum() {
@@ -265,11 +322,6 @@ public class DeviceControlActivity extends AppCompatActivity implements SMSRecei
     private android.os.Handler handler = new android.os.Handler(Looper.getMainLooper());
 
     private void updateVibrationFromMorse(final String morse) {
-
-        // length of time, in milliseconds, of one dot in morse code
-        // wikipedia uses the example of 50ms
-        // does not seem to work on anything much lower than 100ms.
-        final int morseTimeUnit = 100;
 
         //base case
         if (mBluetoothLeService == null) {
